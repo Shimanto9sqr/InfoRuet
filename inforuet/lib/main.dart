@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 58, 156, 183)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title:'RUET Diary') //const MyHomePage(title: 'Info Desk'),
+      home: const CseInfo() //const MyHomePage(title:'RUET Diary') //const MyHomePage(title: 'Info Desk'),
     );
   }
 }
