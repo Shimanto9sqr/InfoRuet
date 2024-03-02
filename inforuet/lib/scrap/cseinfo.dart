@@ -1,10 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/dom.dart' as dom;
 import 'package:inforuet/model/csemodel.dart';
-import 'package:expansion_tile_card/expansion_tile_card.dart';
+import 'package:inforuet/utility/tableinfo_card.dart';
 class CseInfo extends StatefulWidget {
   const CseInfo({super.key});
 
@@ -18,16 +17,16 @@ class _CseInfoState extends State<CseInfo> {
   @override
   void initState(){
     super.initState();
-    initialization();
+    //initialization();
     cseTabInfo=getCseDate();
   }
-   void initialization() async {
+  //  void initialization() async {
    
     
-    await Future.delayed(const Duration(seconds:1));
+  //   await Future.delayed(const Duration(seconds:1));
    
-    FlutterNativeSplash.remove();
-  }
+  //   FlutterNativeSplash.remove();
+  // }
 
   Future<TableInfo> getCseDate() async { 
     final url = Uri.parse('https://www.cse.ruet.ac.bd/teacher_list');
@@ -78,7 +77,7 @@ class _CseInfoState extends State<CseInfo> {
            appBar: AppBar(
             title: const Text("Show Photo"),
             centerTitle: true,
-            backgroundColor: Colors.cyan,
+            backgroundColor: const Color.fromARGB(255, 242, 220, 242),
            ),
            body: Center(
             child: FutureBuilder<TableInfo>(future: getCseDate(), builder: ((context,snapshot){
@@ -87,38 +86,17 @@ class _CseInfoState extends State<CseInfo> {
                    
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: ExpansionTileCard(
-                        leading: Image.network(snapshot.data!.image[index]),
-                        title: Text(snapshot.data!.name[index]),
-                        subtitle: Text(snapshot.data!.designation[index]),
-                        trailing: Text('Department of ${snapshot.data!.department[index]}'),
-                        elevationCurve: Curves.bounceIn,
-                        initialElevation: 5.0,
-                        expandedColor: Color.fromARGB(240, 168, 223, 237),
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: <Widget>[
-                              Text(snapshot.data!.phone[index]),
-                              const Divider(
-                                height: 5.0,
-                                thickness: 2.0,
-                                color: Color.fromARGB(1, 77, 76, 76),
-                              ),
-                              Text(snapshot.data!.email[index]),
-                            ],
-                          ),
-                         const  Divider(
-                            height: 1.0,
-                            thickness: 1.0,
-                          ),
-                         Container(
-                          child: Text(snapshot.data!.officeContact[index]),
-                         ) 
-                        ],
-                        
-                        ),
-                    );
+                      child: TableInfoCard(
+                        image: snapshot.data!.image[index],
+                        name: snapshot.data!.name[index],
+                        designation: snapshot.data!.designation[index], 
+                        department: snapshot.data!.department[index], 
+                        email:snapshot.data!.email[index], 
+                        phone: snapshot.data!.phone[index], 
+                        officeContact: snapshot.data!.officeContact[index],
+                        )
+                      
+                );
                  },
                  itemCount: snapshot.data!.image.length,
                  );

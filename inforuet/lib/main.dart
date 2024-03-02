@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:inforuet/UI/home.dart';
-import 'package:inforuet/scrap/cseinfo.dart';
+
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 58, 156, 183)),
         useMaterial3: true,
       ),
-      home: const CseInfo() //const MyHomePage(title:'RUET Diary') //const MyHomePage(title: 'Info Desk'),
+      home: const MyHomePage(title:'RUET Diary'),//const CseInfo()  //const MyHomePage(title: 'Info Desk'),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:inforuet/utility/cardwidget.dart';
+import 'package:inforuet/scrap/cseinfo.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -13,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
+  final List<String> departments = ['EEE','CSE','ECE','ETE','ME','IPE','GCE','MTE','MSE','ChE','CE','URP','Arch.','BECM'];
 
   @override
   void initState() {
@@ -24,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initialization() async {
    
     
-    await Future.delayed(const Duration(seconds:2));
+    await Future.delayed(const Duration(milliseconds: 200));
    
     FlutterNativeSplash.remove();
   }
@@ -36,107 +37,52 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
       
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Color.fromARGB(255, 242, 220, 242),
       
         title: Text(widget.title),
         centerTitle: true,
       ),
       
-      body: const  Center(  
-            child: Center(child: Text('Homepage contains\n a bottom navbar with navigation options\n bg will have a vector art of ruet gate\n and some infos like \nabout \n history\n motto\n overview or summary]n this thing will be at cards with animation  of rotating or \n swapping',
-            textAlign: TextAlign.center,
-            )
+      body:  Center(  
+           // child: Center(child: Text('Homepage contains\n a bottom navbar with navigation options\n bg will have a vector art of ruet gate\n and some infos like \nabout \n history\n motto\n overview or summary]n this thing will be at cards with animation  of rotating or \n swapping',
+          //  textAlign: TextAlign.center,
+             child: GridView.count(
+              crossAxisCount: 2,
+              children: List.generate(departments.length, (index){
+                return Card(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  clipBehavior: Clip.hardEdge,
+                  child: InkWell(
+                        splashColor: Color.fromARGB(255, 202, 233, 236).withAlpha(30),
+                        onTap: (){
+                          navigateTo(const CseInfo());
+                        },
+                      child: SizedBox(
+                        width: w/2.5,
+                        height: h/6,
+                        child: Center(child: Text('Dept of ${departments[index]}',
+                            style: const TextStyle(
+                              fontSize: 25,
+                              fontStyle: FontStyle.italic,
+                            ),
+                        ),
+                        ),
+                      ),
+                  ),
+                   
+                );
+              }),
+              ),
+            ),
             
-            )
-      )
-      //   child: Center(        
-      //     child: Column(
-          
-      //       mainAxisAlignment: MainAxisAlignment.start,
-      //       children: <Widget>[
-      //           SizedBox(
-      //             height: h/50,
-      //           ),
+            
+      
+    );
+  }
 
-      //           Row(
-      //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //               children: <Widget>[
-      //                     CardWidget(h: h, w: w, dept: 'CSE',),
-      //                     CardWidget(h: h, w: w, dept: 'EEE'),
-      //               ], 
-      //           ),
-      //             SizedBox(
-      //             height: h/50,
-      //           ),
-
-      //           Row(
-      //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //               children: <Widget>[
-      //                     CardWidget(h: h, w: w, dept: 'ECE'),
-      //                     CardWidget(h: h, w: w, dept: 'ETE'),
-      //               ], 
-      //           ),
-      //             SizedBox(
-      //             height: h/50,
-      //           ),
-
-      //           Row(
-      //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //               children: <Widget>[
-      //                     CardWidget(h: h, w: w, dept: 'MTE'),
-      //                     CardWidget(h: h, w: w, dept: 'MSE'),
-      //               ], 
-      //           ),
-      //             SizedBox(
-      //             height: h/50,
-      //           ),
-
-      //           Row(
-      //              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //               children: <Widget>[
-      //                     CardWidget(h: h, w: w, dept: 'ME'),
-      //                     CardWidget(h: h, w: w, dept: 'IPE'),
-      //               ], 
-      //           ),
-      //             SizedBox(
-      //             height: h/50,
-      //           ),
-
-      //           Row(
-      //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //               children: <Widget>[
-      //                     CardWidget(h: h, w: w, dept: 'CFPE'),
-      //                     CardWidget(h: h, w: w, dept: 'GCE'),
-      //               ], 
-      //           ),
-      //              SizedBox(
-      //             height: h/50,
-      //           ),
-
-      //           Row(
-      //              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //               children: <Widget>[
-      //                    CardWidget(h: h, w: w, dept: 'CE'),
-      //                    CardWidget(h: h, w: w, dept: 'URP'),
-      //               ], 
-      //           ),
-      //             SizedBox(
-      //             height: h/50,
-      //           ),
-
-      //            Row(
-      //              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //               children: <Widget>[
-      //                     CardWidget(h: h, w: w, dept: 'BECM'),
-      //                     CardWidget(h: h, w: w, dept: 'ARCH'),
-      //               ], 
-      //           ),
-               
-      //       ],
-      //     ),
-      //   ),
-      // ),
-       // This trailing comma makes auto-formatting nicer for build methods.
+  navigateTo(Widget page){
+    Navigator.push(context, 
+    MaterialPageRoute(builder: (context)=> page)
     );
   }
 }
