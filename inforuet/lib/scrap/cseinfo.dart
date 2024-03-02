@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/dom.dart' as dom;
-
+import 'package:inforuet/model/csemodel.dart';
+import 'package:expansion_tile_card/expansion_tile_card.dart';
 class CseInfo extends StatefulWidget {
   const CseInfo({super.key});
 
@@ -12,12 +13,13 @@ class CseInfo extends StatefulWidget {
 }
 
 class _CseInfoState extends State<CseInfo> {
-  
+  late Future<TableInfo> cseTabInfo;
+
   @override
   void initState(){
     super.initState();
     initialization();
-    getCseDate();
+    cseTabInfo=getCseDate();
   }
    void initialization() async {
    
@@ -27,7 +29,7 @@ class _CseInfoState extends State<CseInfo> {
     FlutterNativeSplash.remove();
   }
 
-  Future<List<String>> getCseDate() async { 
+  Future<TableInfo> getCseDate() async { 
     final url = Uri.parse('https://www.cse.ruet.ac.bd/teacher_list');
     final response = await http.get(url);
     dom.Document html = dom.Document.html(response.body);
@@ -56,17 +58,17 @@ class _CseInfoState extends State<CseInfo> {
           .toList();           
 
    // print('Count: ${images.length}');
-    for(int i=0;i<images.length;i++){
-      print(images[i]);
-      print(name[i]);
-      print(designation[i]);
-      print(department[i]);
-      print(email[i]);
-      print(phone[i]);
-      print(officeContact[i]);
+    // for(int i=0;i<images.length;i++){
+    //   print(images[i]);
+    //   print(name[i]);
+    //   print(designation[i]);
+    //   print(department[i]);
+    //   print(email[i]);
+    //   print(phone[i]);
+    //   print(officeContact[i]);
 
-    }    
-     return images;         
+    // }    
+     return TableInfo(image: images, name: name, designation: designation, department: department, email: email, phone: phone, officeContact: officeContact);         
   }
 
   @override
@@ -79,16 +81,46 @@ class _CseInfoState extends State<CseInfo> {
             backgroundColor: Colors.cyan,
            ),
            body: Center(
-            child: FutureBuilder<List<String>>(future: getCseDate(), builder: ((context,snapshot){
+            child: FutureBuilder<TableInfo>(future: getCseDate(), builder: ((context,snapshot){
               if(snapshot.hasData){
                  return ListView.builder(itemBuilder: (context,index){
-                    String? photo = snapshot.data?[index];
-                    return ListTile(
-                         leading: Image.network(photo!),
-                         title: const Text('Faculty of CSE'),
+                   
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ExpansionTileCard(
+                        leading: Image.network(snapshot.data!.image[index]),
+                        title: Text(snapshot.data!.name[index]),
+                        subtitle: Text(snapshot.data!.designation[index]),
+                        trailing: Text('Department of ${snapshot.data!.department[index]}'),
+                        elevationCurve: Curves.bounceIn,
+                        initialElevation: 5.0,
+                        expandedColor: Color.fromARGB(240, 168, 223, 237),
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              Text(snapshot.data!.phone[index]),
+                              const Divider(
+                                height: 5.0,
+                                thickness: 2.0,
+                                color: Color.fromARGB(1, 77, 76, 76),
+                              ),
+                              Text(snapshot.data!.email[index]),
+                            ],
+                          ),
+                         const  Divider(
+                            height: 1.0,
+                            thickness: 1.0,
+                          ),
+                         Container(
+                          child: Text(snapshot.data!.officeContact[index]),
+                         ) 
+                        ],
+                        
+                        ),
                     );
                  },
-                 itemCount: snapshot.data!.length,
+                 itemCount: snapshot.data!.image.length,
                  );
                   
                 

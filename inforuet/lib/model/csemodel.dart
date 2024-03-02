@@ -2,7 +2,7 @@ class TableInfo{
       List<String> image;
       List<String> name;
       List<String> designation;
-      List<String> deparment;
+      List<String> department;
       List<String> email;
       List<String> phone;
       List<String> officeContact;
@@ -11,7 +11,7 @@ class TableInfo{
          required this.image,
          required this.name,
          required this.designation,
-         required this.deparment,
+         required this.department,
          required this.email,
          required this.phone,
          required this.officeContact,
