@@ -18,7 +18,7 @@ class CardWidget extends StatelessWidget {
     return Card(
       clipBehavior: Clip.hardEdge, 
       elevation: 10,
-      shadowColor: Color.fromARGB(130, 148, 235, 235),
+      shadowColor: const Color.fromARGB(130, 148, 235, 235),
       child: InkWell(
         onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> const FacultyInfo()),

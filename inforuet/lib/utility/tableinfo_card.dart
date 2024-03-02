@@ -11,6 +11,7 @@ class TableInfoCard extends StatelessWidget {
     required this.email,
     required this.phone,
     required this.officeContact,
+    required this.singlePage,
   });
 
   final String image;
@@ -20,6 +21,9 @@ class TableInfoCard extends StatelessWidget {
   final String email;
   final String phone;
   final String officeContact;
+  final Widget singlePage;
+  
+  
   @override
   Widget build(BuildContext context) {
     final size=MediaQuery.of(context).size;
@@ -32,34 +36,36 @@ class TableInfoCard extends StatelessWidget {
       initialElevation: 5.0,
       expandedColor: const Color.fromARGB(240, 168, 223, 237),
       children: <Widget>[
-        Container(
-          height: size.height/20,
+        SizedBox(
+          height: size.height/10,
           width: size.width,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Row(
-                children: [
-                  Text(phone),
-                  IconButton(
-                    onPressed: (){},
-                    icon: const Icon(Icons.call),
-                    ),
-                ],
+              Flexible(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(phone),
+                    IconButton(
+                      onPressed: (){},
+                      icon: const Icon(Icons.call),
+                      ),
+                  ],
+                ),
               ),
-              const VerticalDivider(
-                width: 1.0,
-                thickness: 2.0,
-                color: Color.fromARGB(1, 77, 76, 76),
-              ),
-              Row(
-                children: [
-                  Text(email),
-                  IconButton(
-                    onPressed: (){},
-                    icon: const Icon(Icons.email),
-                    ),
-                ],
+              Flexible(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(email),
+                    IconButton(
+                      onPressed: (){},
+                      icon: const Icon(Icons.email),
+                      ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -68,12 +74,25 @@ class TableInfoCard extends StatelessWidget {
           height: 1.0,
           thickness: 1.0,
         ),
-        Container(
-          height: size.height/20,
+        SizedBox(
+          height: size.height/15,
           width: size.width,
           child: Center(child: Text(officeContact)),
-        )
+        ),
+        const Divider(
+          height: 1.0,
+          thickness: 1.0,
+        ),
+        TextButton(
+        onPressed: (){
+             Navigator.push(context, MaterialPageRoute(builder: (context)=> singlePage
+             ),
+             );
+        },
+        child: const Text('Details'))
+
       ],
     );
   }
+  
 }

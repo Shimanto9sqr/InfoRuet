@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:inforuet/model/csemodel.dart';
 import 'package:inforuet/scrap/cseinfo.dart';
 
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key, required this.title, required this.infoTab});
 
 
   final String title;
+  final Future<TableInfo> infoTab;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -47,22 +49,22 @@ class _MyHomePageState extends State<MyHomePage> {
            // child: Center(child: Text('Homepage contains\n a bottom navbar with navigation options\n bg will have a vector art of ruet gate\n and some infos like \nabout \n history\n motto\n overview or summary]n this thing will be at cards with animation  of rotating or \n swapping',
           //  textAlign: TextAlign.center,
              child: GridView.count(
-              crossAxisCount: 2,
+              crossAxisCount: 3,
               children: List.generate(departments.length, (index){
                 return Card(
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: Color.fromARGB(255, 247, 226, 239),
                   clipBehavior: Clip.hardEdge,
                   child: InkWell(
                         splashColor: Color.fromARGB(255, 202, 233, 236).withAlpha(30),
                         onTap: (){
-                          navigateTo(const CseInfo());
+                          navigateTo( CseInfo(cseTabInfos: widget.infoTab,));
                         },
                       child: SizedBox(
                         width: w/2.5,
                         height: h/6,
                         child: Center(child: Text('Dept of ${departments[index]}',
                             style: const TextStyle(
-                              fontSize: 25,
+                              fontSize: 20,
                               fontStyle: FontStyle.italic,
                             ),
                         ),
