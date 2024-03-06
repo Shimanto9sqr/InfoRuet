@@ -43,17 +43,17 @@ void main() {
           .querySelectorAll('#table_list > tbody > tr> td:nth-child(15)').map((element) => element.innerHtml.trim())
           .toList();           
 
-   // print('Count: ${images.length}');
-    // for(int i=0;i<images.length;i++){
-    //   print(images[i]);
-    //   print(name[i]);
-    //   print(designation[i]);
-    //   print(department[i]);
-    //   print(email[i]);
-    //   print(phone[i]);
-    //   print(officeContact[i]);
+   print('Count: ${images.length}');
+    for(int i=0;i<images.length;i++){
+      print(images[i]);
+      print(name[i]);
+      // print(designation[i]);
+      // print(department[i]);
+      // print(email[i]);
+      // print(phone[i]);
+      // print(officeContact[i]);
 
-    // }    
+    }    
      return TableInfo(image: images, name: name, designation: designation, department: department, email: email, phone: phone, officeContact: officeContact);         
   }
 

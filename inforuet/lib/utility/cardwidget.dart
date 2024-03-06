@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:inforuet/UI/facultyinfopage.dart';
 
 class CardWidget extends StatelessWidget {
   const CardWidget({
@@ -7,37 +6,37 @@ class CardWidget extends StatelessWidget {
     required this.h,
     required this.w,
     required this.dept,
+    required this.onTap,
   });
 
   final double h;
   final double w;
   final String dept;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      clipBehavior: Clip.hardEdge, 
-      elevation: 10,
-      shadowColor: const Color.fromARGB(130, 148, 235, 235),
-      child: InkWell(
-        onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> const FacultyInfo()),
-            );
-        },
-        child:  SizedBox(
-          height: h/5,
-          width: w/2.3,
-          child:  Center(
-            child:  Text('Dept. of $dept',
-            style: const TextStyle(
-              fontSize: 25,
-              
+    return SizedBox(
+      height: h,
+      width: w,
+      child: Card(
+        shape: const CircleBorder(),
+        elevation: 10.0,
+        color: Color.fromARGB(255, 171, 232, 241),
+        child: InkWell(
+              splashColor: const Color.fromARGB(255, 156, 221, 227).withAlpha(30),
+              onTap: onTap,                     
+            child: Center(child: Text('Dept of $dept',
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontStyle: FontStyle.italic,
+                ),
             ),
             ),
-          ),
         ),
+         
       ),
-      
     );
   }
+  
 }
