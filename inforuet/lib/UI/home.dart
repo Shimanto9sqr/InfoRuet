@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:inforuet/model/csemodel.dart';
+import 'package:inforuet/model/table_model.dart';
 import 'package:inforuet/scrap/cseinfo.dart';
 import 'package:inforuet/utility/cardwidget.dart';
 
@@ -37,6 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        shape: const Border(
+             right: BorderSide(
+                color : const Color(0xFF000000),
+                width : 1.0,
+                style : BorderStyle.solid,
+                
+             )
+        ) ,
         backgroundColor: Color.fromARGB(255, 242, 220, 242),
         title: Text(widget.title),
         centerTitle: true,
@@ -82,6 +90,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             navigateTo(CseInfo(cseTabInfos: widget.infoTab));
                           }),
                     ],
+                  ),
+                  SizedBox(
+                    height: h/20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -129,6 +140,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             navigateTo(CseInfo(cseTabInfos: widget.infoTab));
                           }),
                     ],
+                  ),
+                  SizedBox(
+                    height: h/20,
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -180,6 +194,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             navigateTo(CseInfo(cseTabInfos: widget.infoTab));
                           }),
                     ],
+                  ),
+                    SizedBox(
+                    height: h/20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,

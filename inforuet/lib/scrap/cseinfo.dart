@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 // import 'package:http/http.dart' as http;
 // import 'package:html/dom.dart' as dom;
-import 'package:inforuet/model/csemodel.dart';
+import 'package:inforuet/model/table_model.dart';
 import 'package:inforuet/utility/single_page.dart';
 import 'package:inforuet/utility/tableinfo_card.dart';
 class CseInfo extends StatefulWidget {

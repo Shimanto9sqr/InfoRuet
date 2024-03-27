@@ -16,13 +16,22 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: h,
       width: w,
+      decoration: const BoxDecoration(
+        boxShadow:  [
+          BoxShadow(
+            color: Colors.black,
+            spreadRadius: 0.5,
+            blurRadius: 0.5,
+            offset: Offset(2, 4)
+          )
+        ]
+      ),
       child: Card(
-        shape: const CircleBorder(),
         elevation: 10.0,
-        color: Color.fromARGB(255, 171, 232, 241),
+        color: const Color.fromARGB(255, 171, 232, 241),
         child: InkWell(
               splashColor: const Color.fromARGB(255, 156, 221, 227).withAlpha(30),
               onTap: onTap,                     
