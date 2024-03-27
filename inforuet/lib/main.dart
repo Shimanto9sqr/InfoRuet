@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:inforuet/UI/home.dart';
-import 'package:inforuet/model/fetcher.dart';
-import 'package:inforuet/model/table_model.dart';
+// import 'package:inforuet/model/fetcher.dart';
+// import 'package:inforuet/model/table_model.dart';
 //import 'package:inforuet/scrap/cseinfo.dart';
 
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  Future<TableInfo> cseInfo = getData('cse');
+  //Future<TableInfo> cseInfo = getData('cse');
 
-  runApp(MyApp(info: cseInfo,));
+  runApp(const MyApp());
 }
 
 //  Future<TableInfo> getCseDate() async { 
@@ -59,9 +59,9 @@ void main() {
 
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key, required this.info});
+  const MyApp({super.key});
   
-  final Future<TableInfo> info;
+  //final Future<TableInfo> info;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 58, 156, 183)),
         useMaterial3: true,
       ),
-      home:MyHomePage(title:'RUET Diary', infoTab: info,),//const CseInfo()  //const MyHomePage(title: 'Info Desk'),
+      home:const MyHomePage(title:'RUET Diary'),//const CseInfo()  //const MyHomePage(title: 'Info Desk'),
     );
   }
 }

@@ -22,7 +22,7 @@ class CardWidget extends StatelessWidget {
       decoration: const BoxDecoration(
         boxShadow:  [
           BoxShadow(
-            color: Colors.black,
+            color: Color.fromARGB(255, 158, 229, 232),
             spreadRadius: 0.5,
             blurRadius: 0.5,
             offset: Offset(2, 4)

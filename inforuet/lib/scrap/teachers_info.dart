@@ -1,23 +1,25 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
+// import 'package:flutter_native_splash/flutter_native_splash.dart';
 // import 'package:http/http.dart' as http;
 // import 'package:html/dom.dart' as dom;
 import 'package:inforuet/model/table_model.dart';
 import 'package:inforuet/utility/single_page.dart';
 import 'package:inforuet/utility/tableinfo_card.dart';
-class CseInfo extends StatefulWidget {
-   const CseInfo({super.key,
-  required this.cseTabInfos,
+class TeachersInfo extends StatefulWidget {
+   const TeachersInfo({super.key,
+  required this.teachersTabinfo,
+  required this.deptName,
   });
 
-  final Future<TableInfo>cseTabInfos;
+  final Future<TableInfo>teachersTabinfo;
+  final String deptName;
 
   @override
-  State<CseInfo> createState() => _CseInfoState();
+  State<TeachersInfo> createState() => _CseInfoState();
 }
 
-class _CseInfoState extends State<CseInfo> {
+class _CseInfoState extends State<TeachersInfo> {
    //late Future<TableInfo> cseTabInfo;
    
    
@@ -25,16 +27,16 @@ class _CseInfoState extends State<CseInfo> {
   @override
   void initState(){
     super.initState();
-    initialization();
+    // initialization();
     
   }
-   void initialization() async {
+  //  void initialization() async {
    
     
-    await Future.delayed(const Duration(seconds:1));
+  //   await Future.delayed(const Duration(seconds:1));
    
-    FlutterNativeSplash.remove();
-  }
+  //   FlutterNativeSplash.remove();
+  // }
 
   // Future<TableInfo> getCseDate() async { 
   //   final url = Uri.parse('https://www.cse.ruet.ac.bd/teacher_list');
@@ -83,12 +85,12 @@ class _CseInfoState extends State<CseInfo> {
    
     return Scaffold(
            appBar: AppBar(
-            title: const Text("Faculty Info"),
+            title:Text("${widget.deptName} Faculty Info"),
             centerTitle: true,
             backgroundColor: const Color.fromARGB(255, 242, 220, 242),
            ),
            body: Center(
-            child: FutureBuilder<TableInfo>(future: widget.cseTabInfos , builder: ((context,snapshot){
+            child: FutureBuilder<TableInfo>(future: widget.teachersTabinfo , builder: ((context,snapshot){
               if(snapshot.hasData){
                  return ListView.builder(itemBuilder: (context,index){
                    

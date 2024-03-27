@@ -31,7 +31,7 @@ Future<TableInfo> getData(String dept) async {
           .querySelectorAll('#table_list > tbody > tr> td:nth-child(15)').map((element) => element.innerHtml.trim())
           .toList();           
 
-   print('Count: ${images.length}');
+    print('Count: ${images.length}');
     for(int i=0;i<images.length;i++){
       print(images[i]);
       print(name[i]);
