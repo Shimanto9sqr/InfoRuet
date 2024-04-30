@@ -10,7 +10,6 @@ void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   //Future<TableInfo> cseInfo = getData('cse');
-
   runApp(const MyApp());
 }
 
