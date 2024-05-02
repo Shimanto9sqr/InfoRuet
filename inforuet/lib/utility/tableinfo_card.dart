@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TableInfoCard extends StatelessWidget {
   const TableInfoCard({
@@ -49,7 +50,17 @@ class TableInfoCard extends StatelessWidget {
                   children: [
                     Text(phone),
                     IconButton(
-                      onPressed: (){},
+                      onPressed: ()async{
+                        final Uri url = Uri(
+                          scheme: 'tel',
+                          path: phone,
+                        );
+                        if(await canLaunchUrl(url)){
+                          await launchUrl(url);
+                        } else{
+                          print('can not launch this url');
+                        }
+                      },
                       icon: const Icon(Icons.call),
                       ),
                   ],
@@ -61,7 +72,17 @@ class TableInfoCard extends StatelessWidget {
                   children: [
                     Text(email),
                     IconButton(
-                      onPressed: (){},
+                      onPressed: ()async{
+                        final Uri url = Uri(
+                          scheme: 'mailto',
+                          path: email,
+                        );
+                         if(await canLaunchUrl(url)){
+                          await launchUrl(url);
+                        } else{
+                          print('can not launch this url');
+                        }
+                      },
                       icon: const Icon(Icons.email),
                       ),
                   ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:inforuet/UI/home.dart';
+import 'package:inforuet/UI/homepage.dart';
 // import 'package:inforuet/model/fetcher.dart';
 // import 'package:inforuet/model/table_model.dart';
 //import 'package:inforuet/scrap/cseinfo.dart';
@@ -72,7 +73,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 58, 156, 183)),
         useMaterial3: true,
       ),
-      home:const MyHomePage(title:'RUET Diary'),//const CseInfo()  //const MyHomePage(title: 'Info Desk'),
+      home: const HomaePage(),
+      //  home:const MyHomePage(title:'RUET Diary'),//const CseInfo()  //const MyHomePage(title: 'Info Desk'),
     );
   }
 }
