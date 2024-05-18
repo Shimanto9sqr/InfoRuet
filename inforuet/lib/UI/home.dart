@@ -4,12 +4,11 @@ import 'package:inforuet/model/fetcher.dart';
 import 'package:inforuet/model/table_model.dart';
 import 'package:inforuet/scrap/teachers_info.dart';
 import 'package:inforuet/utility/cardwidget.dart';
-import 'package:inforuet/utility/clipper.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key});
 
-  final String title;
+ 
   
 
   @override
@@ -44,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: MediaQuery.of(context).size.width,
              decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Color.fromARGB(255, 255, 162, 0),Color.fromARGB(185, 4, 221, 241)],
+                  colors: [Color.fromARGB(255, 170, 231, 244),Color.fromARGB(185, 4, 221, 241)],
                 ),
               ),
               child: const Center(

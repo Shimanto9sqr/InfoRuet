@@ -16,11 +16,23 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: h,
-      width: w,
-      child: Card(
-        color: const Color.fromARGB(255, 171, 232, 241),
+    return Padding(
+      padding: const EdgeInsets.all(0) ,
+      
+      child: Container(
+          height: h,
+          width: w,
+         decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 170, 231, 244),
+                 
+                  Color.fromARGB(184, 129, 234, 243),
+                  
+                ],
+              ),
+            ),
         child: InkWell(
               splashColor: const Color.fromARGB(255, 156, 221, 227).withAlpha(30),
               onTap: onTap,                     

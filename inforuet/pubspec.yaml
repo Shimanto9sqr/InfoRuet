@@ -23,6 +23,7 @@ dependencies:
   html: ^0.15.4
   expansion_tile_card: ^3.0.0
   url_launcher: ^6.1.7
+  webview_flutter: ^3.0.0
   
 dev_dependencies:
   flutter_test:
@@ -77,5 +78,8 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+    - family: ChakraPetch
+      fonts:
+        - asset: fonts/ChakraPetch-SemiBold.ttf 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
