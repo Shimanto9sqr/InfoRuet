@@ -35,7 +35,7 @@ A Flutter application designed to provide quick access to information about Rajs
 ## Project Context
 
 Developed as part of **CSE 3200** course requirements at RUET.
-
+[App Overview](https://www.linkedin.com/feed/update/urn:li:activity:7199013382081978369/)
 ## Tags
 
 #FlutterProject #UniversityApp #WebScraping #CSE3200 #RUET
