@@ -1,4 +1,5 @@
 # InfoRUET - RUET Information Portal
+![App Overview](https://www.linkedin.com/feed/update/urn:li:activity:7199013382081978369/)
 
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
@@ -35,7 +36,6 @@ A Flutter application designed to provide quick access to information about Rajs
 ## Project Context
 
 Developed as part of **CSE 3200** course requirements at RUET.
-[App Overview](https://www.linkedin.com/feed/update/urn:li:activity:7199013382081978369/)
 ## Tags
 
 #FlutterProject #UniversityApp #WebScraping #CSE3200 #RUET
