@@ -43,17 +43,13 @@ class CampusWidget extends StatelessWidget {
                      height: 100,
                      width: MediaQuery.of(context).size.width*.6,
                      decoration: const BoxDecoration(
+                       color: Colors.black,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
-                       gradient: LinearGradient(
-                                       colors: [
-                                     Color.fromARGB(255, 198, 232, 240),
-                                     Color.fromARGB(184, 4, 203, 221),
-                               ],
-                                 ),
                      ),
                      child: const Center(
                        child:  Text("Campus Map",
                         style: TextStyle(
+                          color: Colors.white,
                                    fontFamily: 'ChakraPetch',
                                    fontSize: 20,
                        
@@ -74,17 +70,13 @@ class CampusWidget extends StatelessWidget {
                      height: 100,
                      width: MediaQuery.of(context).size.width*.6,
                      decoration: const BoxDecoration(
+                       color: Colors.black,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
-                       gradient: LinearGradient(
-                                       colors: [
-                                     Color.fromARGB(255, 198, 232, 240),
-                                     Color.fromARGB(184, 4, 203, 221)
-                               ],
-                                 ),
                      ),
                      child: const Center(
                          child:  Text("Hall life",
                           style: TextStyle(
+                            color: Colors.white,
                                      fontFamily: 'ChakraPetch',
                                      fontSize: 20,
                          
@@ -108,17 +100,13 @@ class CampusWidget extends StatelessWidget {
                      height: 215,
                      width: MediaQuery.of(context).size.width*.275,
                      decoration: const BoxDecoration(
+                       color: Colors.black,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
-                      gradient: LinearGradient(
-                                       colors: [
-                                     Color.fromARGB(255, 198, 232, 240),
-                                     Color.fromARGB(184, 4, 203, 221)
-                               ],
-                                 ),
                      ),
                      child: const Center(
                          child:  Text("Transport",
                           style: TextStyle(
+                            color: Colors.white,
                                      fontFamily: 'ChakraPetch',
                                      fontSize: 20,
                          

@@ -43,13 +43,15 @@ class _MyHomePageState extends State<MyHomePage> {
             width: MediaQuery.of(context).size.width,
              decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Color.fromARGB(255, 170, 231, 244),Color.fromARGB(185, 4, 221, 241)],
+                  colors: [Color.fromARGB(255, 21, 21, 21),Color.fromARGB(
+                      185, 14, 14, 14)],
                 ),
               ),
               child: const Center(
                 child:  Text(
                   'Faculty Information',
                   style: TextStyle(
+                    color: Colors.white,
                     fontFamily: 'Micro5Charted',
                     fontSize: 30
                   ),

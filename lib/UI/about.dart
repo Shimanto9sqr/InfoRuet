@@ -9,6 +9,24 @@ class AboutRuet extends StatefulWidget {
 }
 
 class _AboutRuetState extends State<AboutRuet> {
+  late final WebViewController controller;
+  bool _isLoading = true;
+  @override
+  void initState(){
+    super.initState();
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(Colors.white)
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onPageFinished: (String url){
+            setState(() {
+              _isLoading = false;
+            });
+          }
+        )
+      )..loadRequest(Uri.parse('https://www.ruet.ac.bd/page/campus-details'),);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +38,7 @@ class _AboutRuetState extends State<AboutRuet> {
         ),
         centerTitle: true,
       ),
-      body: const WebView(
-        initialUrl: 'https://www.ruet.ac.bd/page/campus-details',
-        javascriptMode: JavascriptMode.unrestricted,
-      ),
+      body: _isLoading? Center(child: CircularProgressIndicator()): WebViewWidget(controller: controller),
     );
   }
 }
