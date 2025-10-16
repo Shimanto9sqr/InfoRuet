@@ -3,6 +3,11 @@
 
 A Flutter application designed to provide quick access to information about Rajshahi University of Engineering and Technology (RUET), with convenient contact features.[App Overview](https://www.linkedin.com/feed/update/urn:li:activity:7199013382081978369/)
 
+## App Preview
+
+https://github.com/user-attachments/assets/95fb7485-43ee-45c1-b963-31b713b642b8
+
+
 ## Features
 
 - **Comprehensive Faculty Information**:
