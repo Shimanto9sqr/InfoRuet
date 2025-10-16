@@ -1,7 +1,7 @@
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 
-A Flutter application designed to provide quick access to information about Rajshahi University of Engineering and Technology (RUET), with convenient contact features.[App Overview](https://www.linkedin.com/feed/update/urn:li:activity:7199013382081978369/)
+A Flutter application designed to provide quick access to information about Rajshahi University of Engineering and Technology (RUET), with convenient contact features.
 
 ## App Preview
 
@@ -11,8 +11,8 @@ https://github.com/user-attachments/assets/95fb7485-43ee-45c1-b963-31b713b642b8
 ## Features
 
 - **Comprehensive Faculty Information**:
-    - Browse all RUET departments and faculties
-    - Organized department-wise data structure
+    - Browse all departments and faculties of RUET
+    - Organized department-wise information
 
 - **Quick Contact Options**:
     - One-tap calling functionality
@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/95fb7485-43ee-45c1-b963-31b713b642b8
 
 - **Core Components**:
     - HTML scraper function for data collection
-    - Object-Oriented Programming (OOP) architecture
+    - Object-Oriented Programming (OOP) concepts
     - Efficient data parsing from RUET website
     -
 ## Tags
