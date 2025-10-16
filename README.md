@@ -33,9 +33,3 @@ A Flutter application designed to provide quick access to information about Rajs
   - Object-Oriented Programming (OOP) architecture
   - Efficient data parsing from RUET website
 
-## Project Context
-
-Developed as part of **CSE 3200** course requirements at RUET.
-## Tags
-
-#FlutterProject #UniversityApp #WebScraping #CSE3200 #RUET
