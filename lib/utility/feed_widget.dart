@@ -41,16 +41,13 @@ class FeedWidget extends StatelessWidget {
                      height: 100,
                      width: MediaQuery.of(context).size.width*.6,
                      decoration: const BoxDecoration(
+                       color: Colors.black,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
-                           gradient: LinearGradient(
-                                     colors: [
-                                   Color.fromARGB(255, 198, 232, 240),
-                                   Color.fromARGB(184, 4, 203, 221)
-                             ],
-              ),
+
             ),
                      child: const Center(child:  Text('Academic Calendar',
                       style: TextStyle(
+                        color: Colors.white,
             fontFamily: 'ChakraPetch',
             fontSize: 20,
 
@@ -70,17 +67,13 @@ class FeedWidget extends StatelessWidget {
                      height: 100,
                      width: MediaQuery.of(context).size.width*.275,
                      decoration: const BoxDecoration(
+                       color: Colors.black,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
-                        gradient: LinearGradient(
-                                       colors: [
-                                     Color.fromARGB(255, 198, 232, 240),
-                                     Color.fromARGB(184, 4, 203, 221)
-                               ],
-                                 ),
                      ),
                      child: const Center(
                        child:  Text("Achievements",
                         style: TextStyle(
+                                   color: Colors.white,
                                    fontFamily: 'ChakraPetch',
                                    fontSize: 15,
                        
@@ -102,19 +95,13 @@ class FeedWidget extends StatelessWidget {
                      height: 100,
                      width: MediaQuery.of(context).size.width,
                      decoration: const BoxDecoration(
+                       color: Colors.black,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
-                      gradient: LinearGradient(
-                                         colors: [
-                                       Color.fromARGB(255, 198, 232, 240),
-                                       
-                                       Color.fromARGB(184, 4, 203, 221),
-                                       Color.fromARGB(255, 92, 245, 199),
-                                 ],
-                                   ),
                      ),
                      child: const Center(
                        child:  Text("News & Events",
                         style: TextStyle(
+                                   color: Colors.white,
                                    fontFamily: 'ChakraPetch',
                                    fontSize: 20,
                        

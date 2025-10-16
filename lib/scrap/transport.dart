@@ -9,6 +9,25 @@ class TransportBus extends StatefulWidget {
 }
 
 class _TransportBusState extends State<TransportBus> {
+  late final WebViewController controller;
+  bool _isLoading = true;
+  @override
+  void initState(){
+    super.initState();
+
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)..setBackgroundColor(Colors.white)
+      ..setNavigationDelegate(
+          NavigationDelegate(
+              onPageFinished: (String url){
+                setState(() {
+                  _isLoading = false;
+                });
+              }
+          )
+      )
+      ..loadRequest(Uri.parse('https://www.ruet.ac.bd/page/transportation'),);
+  }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -20,10 +39,7 @@ class _TransportBusState extends State<TransportBus> {
         ),
         centerTitle: true,
       ),
-      body: const WebView(
-        initialUrl: 'https://www.ruet.ac.bd/page/transportation',
-        javascriptMode: JavascriptMode.unrestricted,
-      ),
+      body: _isLoading? Center(child: CircularProgressIndicator(),): WebViewWidget(controller: controller),
        );
   }
 }

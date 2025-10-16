@@ -87,11 +87,12 @@ class _CseInfoState extends State<TeachersInfo> {
            appBar: AppBar(
             title:Text("${widget.deptName} Faculty Info",
             style: const TextStyle(
+              color: Colors.white,
               fontFamily: 'Workbench'
             ),
             ),
             centerTitle: true,
-            backgroundColor: const Color.fromARGB(255, 186, 220, 233),
+            backgroundColor: const Color.fromARGB(255, 14, 14, 14),
            ),
            body: Center(
             child: FutureBuilder<TableInfo>(future: widget.teachersTabinfo , builder: ((context,snapshot){

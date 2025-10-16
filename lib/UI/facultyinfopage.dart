@@ -12,8 +12,12 @@ class _FacultyInfoState extends State<FacultyInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Faculty Info'),
+        backgroundColor: Colors.black26,
+        title: const Text('Faculty Info',
+        style: TextStyle(
+          color: Colors.white
+        ),
+        ),
         centerTitle: true,
       ),
       body: const Center(

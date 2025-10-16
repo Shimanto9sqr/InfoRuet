@@ -9,6 +9,26 @@ class CampusMap extends StatefulWidget {
 }
 
 class _CampusMapState extends State<CampusMap> {
+  late final WebViewController controller;
+ bool _isLoading = true;
+  @override
+  void initState(){
+    super.initState();
+
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(Colors.white)
+      ..setNavigationDelegate(
+          NavigationDelegate(
+              onPageFinished: (String url){
+                setState(() {
+                  _isLoading = false;
+                });
+              }
+          )
+      )
+      ..loadRequest(Uri.parse('https://www.ruet.ac.bd/page/campus-map'),);
+  }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -20,10 +40,7 @@ class _CampusMapState extends State<CampusMap> {
         ),
         centerTitle: true,
       ),
-      body: const WebView(
-        initialUrl: 'https://www.ruet.ac.bd/page/campus-map',
-        javascriptMode: JavascriptMode.unrestricted,
-      ),
+      body: _isLoading? Center(child: CircularProgressIndicator(),):WebViewWidget(controller: controller),
        );
   }
 }

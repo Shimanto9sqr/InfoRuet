@@ -27,9 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color.fromARGB(255, 170, 231, 244),
-                  Color.fromARGB(255, 92, 245, 199),
-                  Color.fromARGB(185, 4, 221, 241),
+                  Color.fromARGB(255, 7, 7, 7),
+                  Color.fromARGB(255, 10, 10, 10),
+                  Color.fromARGB(185, 15, 15, 15),
                   
                 ],
               ),
@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   "Info",
                   style: TextStyle(
+                    color: Colors.white,
                     fontFamily: 'Workbench',
                     fontSize: 25,
                   ),
@@ -48,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   "RUET",
                   style: TextStyle(
+                    color: Colors.white,
                     fontFamily: 'Workbench',
                     fontSize: 40,
                   ),

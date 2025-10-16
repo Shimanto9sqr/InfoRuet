@@ -18,7 +18,8 @@ class _RuetGalleryState extends State<EmergencyCall> {
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Color.fromARGB(255, 170, 231, 244),Color.fromARGB(185, 4, 221, 241)],
+                  colors: [Color.fromARGB(255, 15, 16, 16),Color.fromARGB(
+                      185, 23, 23, 23)],
                 ),
             ),
             child: const Center(
@@ -26,6 +27,7 @@ class _RuetGalleryState extends State<EmergencyCall> {
                 Text(
                   "Emergency",
                   style: TextStyle(
+                    color: Colors.white,
                     fontFamily: 'Workbench',
                     fontSize: 25,
                   ),
@@ -40,31 +42,31 @@ class _RuetGalleryState extends State<EmergencyCall> {
           child: Column(
             
             children: [
-               SizedBox(height: 20,),
+               SizedBox(height: 10,),
                CustomTile(
                img: "asset/fireb.png",
                what: "Fire Brigade",
                desc: "Rajshahi City",
                phone: "01730336655"),
-               SizedBox(height: 20,),
+               SizedBox(height: 10,),
                CustomTile(
                 img: "asset/ambulance.png",
                  what: "Ambulance",
                  desc: "RUET Health Complex",
                   phone: "01712637265"),
-              SizedBox(height: 20,),
+              SizedBox(height: 10,),
                CustomTile(
                 img: "asset/med.png",
                  what: "Medical",
                  desc: "Rajshahi Medical College",
                   phone: "+880775651"),
-              SizedBox(height: 20,),
+              SizedBox(height: 10,),
                CustomTile(
                 img: "asset/police.png",
                  what: "Police",
                  desc: "Matihar Thana",
                   phone: "01320061623"),
-               SizedBox(height: 20,),
+               SizedBox(height: 10,),
                CustomTile(
                 img: "asset/bank.png",
                  what: "Rupali Bank",

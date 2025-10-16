@@ -9,6 +9,26 @@ class LatestNews extends StatefulWidget {
 }
 
 class _LatestNewsState extends State<LatestNews> {
+  late final WebViewController controller;
+  bool _isLoading = true;
+  @override
+  void initState(){
+    super.initState();
+
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(Colors.white)
+      ..setNavigationDelegate(
+          NavigationDelegate(
+              onPageFinished: (String url){
+                setState(() {
+                  _isLoading = false;
+                });
+              }
+          )
+      )
+      ..loadRequest(Uri.parse('https://www.ruet.ac.bd/news-and-event'),);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +40,7 @@ class _LatestNewsState extends State<LatestNews> {
         ),
         centerTitle: true,
       ),
-      body: const  WebView(
-            initialUrl: 'https://www.ruet.ac.bd/news-and-event',
-            javascriptMode: JavascriptMode.unrestricted,
-      ),
+      body: _isLoading? Center(child: CircularProgressIndicator(),): WebViewWidget(controller: controller),
     );
   }
 }

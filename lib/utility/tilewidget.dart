@@ -25,12 +25,13 @@ class _CustomTileState extends State<CustomTile> {
       padding: const EdgeInsets.all(8.0),
       child: Container(
             height: 100,
-            decoration: const BoxDecoration(
+            decoration:  BoxDecoration(
+                borderRadius: BorderRadius.circular(10.0),
                 gradient: LinearGradient(
                   colors: [
-                    Color.fromARGB(255, 170, 231, 244),
-                    Color.fromARGB(255, 153, 238, 212),
-                    Color.fromARGB(185, 4, 221, 241),
+                    Color.fromARGB(255, 7, 7, 7),
+                    Color.fromARGB(255, 10, 10, 10),
+                    Color.fromARGB(185, 10, 10, 10),
                     
                   ],
                 ),
@@ -40,11 +41,17 @@ class _CustomTileState extends State<CustomTile> {
                   leading: Image.asset(widget.img),
                   title: Text(widget.what,
                   style: const TextStyle(
+                    color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold
                   ),
                   ),
-                  subtitle: Text(widget.desc) ,
+                  subtitle: Text(
+                    widget.desc,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ) ,
                   trailing: IconButton(
                           onPressed: ()async{
                             final Uri url = Uri(
@@ -59,6 +66,7 @@ class _CustomTileState extends State<CustomTile> {
                           },
                           icon: const Icon(Icons.telegram,
                           size: 50,
+                            color: Colors.white,
                           ), 
                           ),
                           

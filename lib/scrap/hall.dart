@@ -9,6 +9,26 @@ class HallLife extends StatefulWidget {
 }
 
 class _HallLifeState extends State<HallLife> {
+  late final WebViewController controller;
+  bool _isLoading = true;
+  @override
+  void initState(){
+    super.initState();
+
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(Colors.white)
+      ..setNavigationDelegate(
+          NavigationDelegate(
+              onPageFinished: (String url){
+                setState(() {
+                  _isLoading = false;
+                });
+              }
+          )
+      )
+      ..loadRequest(Uri.parse('https://www.ruet.ac.bd/list/provosts-of-residential-halls'),);
+  }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -20,10 +40,7 @@ class _HallLifeState extends State<HallLife> {
         ),
         centerTitle: true,
       ),
-      body: const WebView(
-        initialUrl: 'https://www.ruet.ac.bd/list/provosts-of-residential-halls',
-        javascriptMode: JavascriptMode.unrestricted,
-      ),
+      body: _isLoading? Center(child: CircularProgressIndicator(),) : WebViewWidget(controller: controller),
        );
   }
 }
