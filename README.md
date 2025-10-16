@@ -6,30 +6,30 @@ A Flutter application designed to provide quick access to information about Rajs
 ## Features
 
 - **Comprehensive Faculty Information**:
-  - Browse all RUET departments and faculties
-  - Organized department-wise data structure
+    - Browse all RUET departments and faculties
+    - Organized department-wise data structure
 
 - **Quick Contact Options**:
-  - One-tap calling functionality
-  - Direct email access
-  - Emergency calling feature
+    - One-tap calling functionality
+    - Direct email access
+    - Emergency calling feature
 
 - **Efficient Data Handling**:
-  - Web scraping functionality to fetch updated information
-  - URL-based department data fetching
+    - Web scraping functionality to fetch updated information
+    - URL-based department data fetching
 
 ## Technical Implementation
 
 - **Built with Flutter**:
-  - Custom UI elements using CustomPainter
-  - Linear gradient implementations for visual appeal
-  - Responsive design principles
+    - Custom UI elements using CustomPainter
+    - Linear gradient implementations for visual appeal
+    - Responsive design principles
 
 - **Core Components**:
-  - HTML scraper function for data collection
-  - Object-Oriented Programming (OOP) architecture
-  - Efficient data parsing from RUET website
-  - 
+    - HTML scraper function for data collection
+    - Object-Oriented Programming (OOP) architecture
+    - Efficient data parsing from RUET website
+    -
 ## Tags
 
 #FlutterProject #UniversityApp #WebScraping #RUET
