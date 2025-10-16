@@ -1,16 +1,38 @@
-# inforuet
+![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 
-A new Flutter project.
+A Flutter application designed to provide quick access to information about Rajshahi University of Engineering and Technology (RUET), with convenient contact features.[App Overview](https://www.linkedin.com/feed/update/urn:li:activity:7199013382081978369/)
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Comprehensive Faculty Information**:
+  - Browse all RUET departments and faculties
+  - Organized department-wise data structure
 
-A few resources to get you started if this is your first Flutter project:
+- **Quick Contact Options**:
+  - One-tap calling functionality
+  - Direct email access
+  - Emergency calling feature
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Efficient Data Handling**:
+  - Web scraping functionality to fetch updated information
+  - URL-based department data fetching
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Technical Implementation
+
+- **Built with Flutter**:
+  - Custom UI elements using CustomPainter
+  - Linear gradient implementations for visual appeal
+  - Responsive design principles
+
+- **Core Components**:
+  - HTML scraper function for data collection
+  - Object-Oriented Programming (OOP) architecture
+  - Efficient data parsing from RUET website
+
+## Project Context
+
+Developed as part of **CSE 3200** course requirements at RUET.
+## Tags
+
+#FlutterProject #UniversityApp #WebScraping #CSE3200 #RUET
