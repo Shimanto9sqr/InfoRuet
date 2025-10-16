@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:inforuet/UI/homepage.dart';
-// import 'package:inforuet/model/fetcher.dart';
-// import 'package:inforuet/model/table_model.dart';
-//import 'package:inforuet/scrap/cseinfo.dart';
 
 
 void main() {
