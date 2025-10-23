@@ -23,12 +23,11 @@ class TableInfoCard extends StatelessWidget {
   final String phone;
   final String officeContact;
   final Widget singlePage;
-  
-  
+
   @override
   Widget build(BuildContext context) {
-    final size=MediaQuery.of(context).size;
-    return  ExpansionTileCard(
+    final size = MediaQuery.of(context).size;
+    return ExpansionTileCard(
       leading: Image.network(image),
       title: Text(name),
       subtitle: Text(designation),
@@ -38,7 +37,7 @@ class TableInfoCard extends StatelessWidget {
       expandedColor: const Color.fromARGB(240, 168, 223, 237),
       children: <Widget>[
         SizedBox(
-          height: size.height/10,
+          height: size.height / 10,
           width: size.width,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -50,19 +49,16 @@ class TableInfoCard extends StatelessWidget {
                   children: [
                     Text(phone),
                     IconButton(
-                      onPressed: ()async{
-                        final Uri url = Uri(
-                          scheme: 'tel',
-                          path: phone,
-                        );
-                        if(await canLaunchUrl(url)){
+                      onPressed: () async {
+                        final Uri url = Uri(scheme: 'tel', path: phone);
+                        if (await canLaunchUrl(url)) {
                           await launchUrl(url);
-                        } else{
+                        } else {
                           print('can not launch this url');
                         }
                       },
                       icon: const Icon(Icons.call),
-                      ),
+                    ),
                   ],
                 ),
               ),
@@ -72,48 +68,39 @@ class TableInfoCard extends StatelessWidget {
                   children: [
                     Text(email),
                     IconButton(
-                      onPressed: ()async{
-                        final Uri url = Uri(
-                          scheme: 'mailto',
-                          path: email,
-                        );
-                         if(await canLaunchUrl(url)){
+                      onPressed: () async {
+                        final Uri url = Uri(scheme: 'mailto', path: email);
+                        if (await canLaunchUrl(url)) {
                           await launchUrl(url);
-                        } else{
+                        } else {
                           print('can not launch this url');
                         }
                       },
                       icon: const Icon(Icons.email),
-                      ),
+                    ),
                   ],
                 ),
               ),
             ],
           ),
         ),
-        const Divider(
-          height: 1.0,
-          thickness: 1.0,
-        ),
+        const Divider(height: 1.0, thickness: 1.0),
         SizedBox(
-          height: size.height/15,
+          height: size.height / 15,
           width: size.width,
           child: Center(child: Text(officeContact)),
         ),
-        const Divider(
-          height: 1.0,
-          thickness: 1.0,
-        ),
+        const Divider(height: 1.0, thickness: 1.0),
         TextButton(
-        onPressed: (){
-             Navigator.push(context, MaterialPageRoute(builder: (context)=> singlePage
-             ),
-             );
-        },
-        child: const Text('Details'))
-
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => singlePage),
+            );
+          },
+          child: const Text('Details'),
+        ),
       ],
     );
   }
-  
 }
