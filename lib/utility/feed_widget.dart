@@ -4,117 +4,124 @@ import 'package:inforuet/scrap/holidays.dart';
 import 'package:inforuet/scrap/latestnews.dart';
 
 class FeedWidget extends StatelessWidget {
-  const FeedWidget({
-    super.key,
-  });
+  const FeedWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-     padding: const EdgeInsets.all(8.0),
-     child:  SizedBox(
-       height: 300,
-       width: MediaQuery.of(context).size.width,
-       child: Column(
-         children: [
-           const Row(
-             children: [
-               Icon(Icons.feed),
-               Text("Feeds",
-                style: TextStyle(
-            fontFamily: 'ChakraPetch',
-            fontSize: 20,
-
-           ),
-               ),
-            ],
+      padding: const EdgeInsets.all(8.0),
+      child: SizedBox(
+        height: 300,
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          children: [
+            const Row(
+              children: [
+                Icon(Icons.feed),
+                Text(
+                  "Feeds",
+                  style: TextStyle(fontFamily: 'ChakraPetch', fontSize: 20),
+                ),
+              ],
             ),
             Row(
-             children: [
-               Padding(
-                 padding: const EdgeInsets.all(8.0),
-                 child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Holiday()));
-                  },
-                   child: Container(
-                     height: 100,
-                     width: MediaQuery.of(context).size.width*.6,
-                     decoration: const BoxDecoration(
-                       color: Colors.black,
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Holiday(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: 100,
+                      width: MediaQuery.of(context).size.width * .6,
+                      decoration: const BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          'Academic Calendar',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'ChakraPetch',
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Achievements(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: 100,
+                      width: MediaQuery.of(context).size.width * .275,
+                      decoration: const BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Achievements",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'ChakraPetch',
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-                     child: const Center(child:  Text('Academic Calendar',
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LatestNews()),
+                  );
+                },
+                child: Container(
+                  height: 100,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "News & Events",
                       style: TextStyle(
                         color: Colors.white,
-            fontFamily: 'ChakraPetch',
-            fontSize: 20,
-
-           ),
-                     ),),
-                   ),
-                 ),
-               ),
-               Padding(
-                 padding: const EdgeInsets.all(8.0),
-                 child: GestureDetector(
-                  onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Achievements()));
-                  },
-                   child: Container(
-                     
-                     height: 100,
-                     width: MediaQuery.of(context).size.width*.275,
-                     decoration: const BoxDecoration(
-                       color: Colors.black,
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                     ),
-                     child: const Center(
-                       child:  Text("Achievements",
-                        style: TextStyle(
-                                   color: Colors.white,
-                                   fontFamily: 'ChakraPetch',
-                                   fontSize: 15,
-                       
-                                  ),
-                       ),
-                     ),
-                   ),
-                 ),
-               ),
-             ],
+                        fontFamily: 'ChakraPetch',
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
-           Padding(
-                 padding: const EdgeInsets.all(8.0),
-                 child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const LatestNews()));
-                  },
-                   child: Container(
-                     height: 100,
-                     width: MediaQuery.of(context).size.width,
-                     decoration: const BoxDecoration(
-                       color: Colors.black,
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                     ),
-                     child: const Center(
-                       child:  Text("News & Events",
-                        style: TextStyle(
-                                   color: Colors.white,
-                                   fontFamily: 'ChakraPetch',
-                                   fontSize: 20,
-                       
-                                  ),
-                       ),
-                     ),
-                   ),
-                 ),
-               ),
-         ],
-       ),
-    
-     ),
-                      );
+          ],
+        ),
+      ),
+    );
   }
 }

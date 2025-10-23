@@ -7,7 +7,6 @@ Future<TableInfo> getData(String dept) async {
     final url = Uri.parse('https://www.$dept.ruet.ac.bd/teacher_list');
     final response = await http.get(url);
     dom.Document html = dom.Document.html(response.body);
-    //print(html);
     final images = html
           .querySelectorAll('#table_list > tbody > tr> td:nth-child(1) > img')
           .map((element)=> 'https://www.$dept.ruet.ac.bd${element.attributes['src']}')
@@ -29,18 +28,6 @@ Future<TableInfo> getData(String dept) async {
           .toList();
     final officeContact = html
           .querySelectorAll('#table_list > tbody > tr> td:nth-child(15)').map((element) => element.innerHtml.trim())
-          .toList();           
-
-    print('Count: ${images.length}');
-    for(int i=0;i<images.length;i++){
-      print(images[i]);
-      print(name[i]);
-      // print(designation[i]);
-      // print(department[i]);
-      // print(email[i]);
-      // print(phone[i]);
-      // print(officeContact[i]);
-
-    }    
+          .toList();
      return TableInfo(image: images, name: name, designation: designation, department: department, email: email, phone: phone, officeContact: officeContact);         
   }
