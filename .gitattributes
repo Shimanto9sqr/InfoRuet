@@ -1,0 +1,8 @@
+# 1. Ignore common web asset files globally (assuming they're from dependencies)
+*.html linguist-vendored
+*.css linguist-vendored
+*.js linguist-vendored
+
+# 2. Specifically ignore the 'web' folder if you built for Flutter Web but
+#    only care about the mobile language stats (Dart/Kotlin/Swift)
+web/ linguist-vendored
